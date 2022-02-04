@@ -6467,7 +6467,7 @@ module.exports = function (_PlayerComponent) {
       var i = this._annotations.indexOf(annotation);
       this._annotations.splice(i, 1);
       this.stateChanged();
-      this.plugin.fire('annotationDeleted', { id: id });
+      this.plugin.fire('annotationDeleted', { id: id, data: this.data });
     }
 
     // Set the live annotation based on current video time
