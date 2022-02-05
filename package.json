@@ -1,6 +1,6 @@
 {
-  "_from": "@maximl91/videojs-annotation-comments@^2.0.1",
-  "_id": "@maximl91/videojs-annotation-comments@2.0.1",
+  "_from": "@maximl91/videojs-annotation-comments@^2.0.2",
+  "_id": "@maximl91/videojs-annotation-comments@2.0.2",
   "_inBundle": false,
   "_integrity": "sha512-cVr9T1ZXvQhJzHglG5EXm+MhBUmiV0RQB50AjhvhYK+vIRILEkmapE0CoJYxgNIriM2an6AnebgLaCGUjVtKKQ==",
   "_location": "/@maximl91/videojs-annotation-comments",
@@ -8,13 +8,13 @@
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "@maximl91/videojs-annotation-comments@^2.0.1",
+    "raw": "@maximl91/videojs-annotation-comments@^2.0.2",
     "name": "@maximl91/videojs-annotation-comments",
     "escapedName": "@maximl91%2fvideojs-annotation-comments",
     "scope": "@maximl91",
-    "rawSpec": "^2.0.1",
+    "rawSpec": "^2.0.2",
     "saveSpec": null,
-    "fetchSpec": "^2.0.1"
+    "fetchSpec": "^2.0.2"
   },
   "_requiredBy": [
     "/"
@@ -137,5 +137,5 @@
     "watch": "gulp watch"
   },
   "style": "build/css/annotations.css",
-  "version": "2.0.1"
+  "version": "2.0.2"
 }
