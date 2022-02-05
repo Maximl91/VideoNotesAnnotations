@@ -6573,6 +6573,11 @@ module.exports = function (_PlayerComponent) {
 
     // Returns annotation object given ID
 
+  },{
+    key: 'requestAnnotationDestoryById',
+    value: function requestAnnotationDestoryById(id) {
+      console.log("fired request")
+    }
   }, {
     key: 'findAnnotation',
     value: function findAnnotation(id) {
@@ -7060,7 +7065,7 @@ module.exports = function (_PlayerUIComponent) {
       var $confirmEl = $('<a/>').addClass('vac-delete-confirm').text('CONFIRM');
       $confirmEl.on('click.comment', function () {
         $confirmEl.off('click.comment');
-        _this3.annotation.teardown();
+        _this3.requestAnnotationDestory(e)
       });
       $(e.target).replaceWith($confirmEl);
     }
@@ -8001,6 +8006,9 @@ var EventRegistry = {
   AnnotationState: {
     openAnnotation: function openAnnotation(event, _this) {
       _this.openAnnotationById(event.detail.id);
+    },
+    requestAnnotationDestory: function requestAnnotationDestory(event, _this) {
+      _this.requestAnnotationDestoryById(event.detail.id);
     },
     closeActiveAnnotation: function closeActiveAnnotation(event, _this) {
       _this.clearActive();
