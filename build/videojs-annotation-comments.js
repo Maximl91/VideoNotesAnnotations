@@ -6229,6 +6229,11 @@ module.exports = function (_PlayerUIComponent) {
 
     // Serialize object
 
+  },{
+    key: 'requestDelete',
+    value: function requestDelete() {
+      this.plugin.fire('requestAnnotationDelete', this.data);
+    }
   }, {
     key: 'bindEvents',
     value: function bindEvents() {
@@ -6467,7 +6472,7 @@ module.exports = function (_PlayerComponent) {
       var i = this._annotations.indexOf(annotation);
       this._annotations.splice(i, 1);
       this.stateChanged();
-      this.plugin.fire('annotationDeleted', { id: id, data: this.data });
+      this.plugin.fire('annotationDeleted', { id: id });
     }
 
     // Set the live annotation based on current video time
@@ -6573,11 +6578,6 @@ module.exports = function (_PlayerComponent) {
 
     // Returns annotation object given ID
 
-  },{
-    key: 'requestAnnotationDestoryById',
-    value: function requestAnnotationDestoryById(id) {
-      console.log("fired request")
-    }
   }, {
     key: 'findAnnotation',
     value: function findAnnotation(id) {
@@ -7065,7 +7065,7 @@ module.exports = function (_PlayerUIComponent) {
       var $confirmEl = $('<a/>').addClass('vac-delete-confirm').text('CONFIRM');
       $confirmEl.on('click.comment', function () {
         $confirmEl.off('click.comment');
-        _this3.requestAnnotationDestory(e)
+        _this3.annotation.requestDelete();
       });
       $(e.target).replaceWith($confirmEl);
     }
@@ -8006,9 +8006,6 @@ var EventRegistry = {
   AnnotationState: {
     openAnnotation: function openAnnotation(event, _this) {
       _this.openAnnotationById(event.detail.id);
-    },
-    requestAnnotationDestory: function requestAnnotationDestory(event, _this) {
-      _this.requestAnnotationDestoryById(event.detail.id);
     },
     closeActiveAnnotation: function closeActiveAnnotation(event, _this) {
       _this.clearActive();
